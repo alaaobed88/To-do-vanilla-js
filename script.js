@@ -1,0 +1,40 @@
+//selectors
+const addButton = document.querySelector('.to-do-button');
+const todoInput = document.querySelector('.to-do-input');
+const todoList  = document.querySelector('.to-do-list');
+
+//functions
+
+const addTodo = (event) => {
+    //prevent default behavior
+    event.preventDefault();
+    //created container for the to do list-item
+    const todocontainer = document.createElement('div');
+    todocontainer.classList.add('todo-items-container');
+    
+    //created li
+    const li = document.createElement('li');
+    //added class to li
+    li.classList.add('todo-task');
+    //added inner text
+    li.innerText = todoInput.value;
+   //added li to the list
+    todocontainer.appendChild(li);
+    //added complete icon
+   const completebtn = document.createElement('button')
+   completebtn.innerHTML=('<i class="fas fa-check"></i>');
+   todocontainer.appendChild(completebtn);
+   completebtn.classList.add("complete-btn");
+   //added delete icon
+   const deletebtn = document.createElement('button');
+   deletebtn.innerHTML=('<i class="fas fa-trash"></i>');
+   todocontainer.appendChild(deletebtn);
+   deletebtn.classList.add("delete-btn");
+   //append items container to the list
+   todoList.appendChild(todocontainer); 
+
+}
+
+//event Listeners
+addButton.addEventListener('click', addTodo);
+

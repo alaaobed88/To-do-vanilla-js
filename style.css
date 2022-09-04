@@ -3,14 +3,14 @@
     margin:0;
     padding:0;
     font-family: 'Roboto Serif', serif;
-    font-size:16px;
+    
 }
 
 body{
     background: #c94b4b;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- 
+    width:100%;
     min-height: 100vh;
     color:black;
 
@@ -33,9 +33,7 @@ form{
     display:flex;
     justify-content: center;
     align-items: center;
-    height: auto;
-    
-}
+    }
 
 form input{
     border:none;
@@ -45,7 +43,7 @@ form input{
 
 form button{
     border:none;
-    padding:0.9%;
+    padding:0.95%;
     color:lightblue;
     background-color: white;
     transition:0.3s ease-in-out;
@@ -59,9 +57,74 @@ form button i{
 form button:hover{
     color:white;
     background-color: lightblue;
-    transform: scale(1.1,ease-in-out);
+    transform: scale(1.1) ;
+}  
+
+.container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+
+.todo-items-container{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    margin-top: 10%;
+    font-size:1rem;
+    min-width:50%;
+}
+
+.todo-task {
+    list-style: none;
+    flex:1;
+    padding-right: 2%;
+    
+}
+
+.complete-btn, .delete-btn{
+    font-size:1rem;
+    padding: 1rem;
+    border:none;
+    cursor:pointer;
+}
+
+.complete-btn{
+    color:green;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+   
 }
 
 
+.complete-btn i{
+    font-size: 20px;
+}
+
+.delete-btn{
+    color:#c94b4b;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+    
+}
+
+.delete-btn i{
+    font-size: 20px;  
+}
+
+.complete-btn:hover{
+    transform: scale(1.1);
+    background-color:green ;
+    color:white;
+}
+
+.delete-btn:hover{
+    transform: scale(1.1);
+    background-color: #c94b4b;
+    color:white;
+}
 
 

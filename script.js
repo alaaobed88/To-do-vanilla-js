@@ -2,7 +2,8 @@
 const addButton = document.querySelector('.to-do-button');
 const todoInput = document.querySelector('.to-do-input');
 const todoList  = document.querySelector('.to-do-list');
-
+const deleteButton = document.querySelector('.delete-btn');
+const completedButton = document.querySelector('complete-btn');
 //functions
 
 const addTodo = (event) => {

@@ -90,6 +90,7 @@ form button:hover{
     padding: 1rem;
     border:none;
     cursor:pointer;
+    
 }
 
 .complete-btn{
@@ -102,6 +103,7 @@ form button:hover{
 
 .complete-btn i{
     font-size: 20px;
+    pointer-events: none;
 }
 
 .delete-btn{
@@ -112,7 +114,8 @@ form button:hover{
 }
 
 .delete-btn i{
-    font-size: 20px;  
+    font-size: 20px; 
+    pointer-events: none; 
 }
 
 .complete-btn:hover{

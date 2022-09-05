@@ -8,6 +8,7 @@ const todoList  = document.querySelector('.to-do-list');
 const addTodo = (event) => {
     //prevent default behavior
     event.preventDefault();
+    if (todoInput.value.includes('   ') || todoInput.value =='  ' || todoInput.value ==' ' || todoInput.value =='') return
     //created container for the to do list-item
     const todocontainer = document.createElement('div');
     todocontainer.classList.add('todo-items-container');

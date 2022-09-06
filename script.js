@@ -41,13 +41,21 @@ const addTodo = (event) => {
 const deleteTodo = (event) => {
     
     if (event.target.classList[0] ==='delete-btn'){
+        event.target.parentElement.classList.toggle('fall');
+        event.target.parentElement.addEventListener('transitionend',() =>{
         event.target.parentElement.remove();
+    })
+}
+}
+const completedTodo = (event) => {
+    if(event.target.classList[0] === 'complete-btn'){
+        event.target.parentElement.classList.toggle('completed');
     }
 }
 
 
 
-
 //event Listeners
 addButton.addEventListener('click', addTodo);
-todoList.addEventListener('click',deleteTodo)
+todoList.addEventListener('click',deleteTodo);
+todoList.addEventListener('click',completedTodo);

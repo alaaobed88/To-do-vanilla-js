@@ -39,11 +39,13 @@ form input{
     border:none;
     padding:1%;
     cursor:pointer;
+    width:20rem;
+    height:5vh;
 }
 
 form button{
     border:none;
-    padding:0.95%;
+    padding:0.62%;
     color:lightblue;
     background-color: white;
     transition:0.3s ease-in-out;
@@ -51,7 +53,7 @@ form button{
 }
 
 form button i{
-    font-size:larger;
+    font-size:1.2rem;
 }
 
 form button:hover{
@@ -64,6 +66,7 @@ form button:hover{
     display: flex;
     justify-content:center;
     align-items: center;
+    margin-top: 1%;
     
 }
 
@@ -73,21 +76,23 @@ form button:hover{
     justify-content: space-between;
     align-items: center;
     background: white;
-    margin-top: 5%;
+    margin-top: 1%;
     font-size:1rem;
-    min-width:50%;
+    min-width:30rem;
+    height: 5vh;
+    transition:all 1s ease;
 }
 
 .todo-task {
     list-style: none;
     flex:1;
-    padding-right: 2%;
+    
     
 }
 
 .complete-btn, .delete-btn{
     font-size:1rem;
-    padding: 1rem;
+    padding: 0.6rem;
     border:none;
     cursor:pointer;
     
@@ -102,7 +107,7 @@ form button:hover{
 
 
 .complete-btn i{
-    font-size: 20px;
+    font-size: 15px;
     pointer-events: none;
 }
 
@@ -114,7 +119,7 @@ form button:hover{
 }
 
 .delete-btn i{
-    font-size: 20px; 
+    font-size: 15px; 
     pointer-events: none; 
 }
 
@@ -131,3 +136,46 @@ form button:hover{
 }
 
 
+.completed{
+    background-color:rgb(165, 216, 165);
+    text-decoration: line-through 1px;
+     
+    opacity: 0.7;
+}
+
+.fall{
+    transform: translateY(5rem) rotateZ(30deg);
+    opacity: 0;
+}
+
+.select{
+    margin-left:0.5rem;
+    position:relative;
+    overflow:hidden;
+    
+}
+
+select{
+color: rgb(130, 185, 204);
+width:10rem;
+cursor:pointer;
+height:2.8vh;
+}
+
+.select::after{
+    content:"\25BC";
+    background-color: white;
+    position:absolute;
+    top:0.085rem;
+    right:0.1rem;
+    font-size: 1rem;
+    pointer-events: none;
+    color:rgb(139, 188, 204);
+    transition: all 0.5s ease-in-out;
+}
+
+.select:hover::after{
+    background-color: rgb(139, 188, 204) ;
+    color:white;
+    transform: scale(1.1);
+}

@@ -12,7 +12,7 @@ const addTodo = (event) => {
     if(todoInput.value.trim().length===0) {
         alert('You cannot enter an empty task');
         return
-    }
+    };
     //created container for the to do list-item
     const todocontainer = document.createElement('div');
     todocontainer.classList.add('todo-items-container');
@@ -39,17 +39,20 @@ const addTodo = (event) => {
    todoList.appendChild(todocontainer); 
    //clearing todo input value
    todoInput.value = '';
-}
+};
 
 const deleteTodo = (event) => {
     
     if (event.target.classList[0] ==='delete-btn'){
-        event.target.parentElement.classList.toggle('fall');
-        event.target.parentElement.addEventListener('transitionend',() =>{
-        event.target.parentElement.remove();
+        const container =  event.target.parentElement;
+        container.classList.toggle('fall');
+        //removing the container after the transition made in css ends
+        container.addEventListener('transitionend',() =>{
+        container.remove();
     })
-}
-}
+};
+};
+
 const completedTodo = (event) => {
     if(event.target.classList[0] === 'complete-btn'){
         event.target.parentElement.classList.toggle('completed');
@@ -61,11 +64,17 @@ const filterTodo =  (event) => {
     todos.forEach(function(todo){
     switch(event.target.value){
         case "all":
-        todo.style.display = 'flex';  
+        todo.style.display = 'flex';
+       // showing the form when choosing all
+        todoInput.style.display = 'flex';
+        addButton.style.display = 'flex';
         break;
         case "completed":
         if(todo.classList.contains('completed'))  {  
             todo.style.display = 'flex';
+           //hiding the form when choosing completed
+            todoInput.style.display = 'none';
+            addButton.style.display = 'none';
         }else{
                 todo.style.display = 'none';
             }
@@ -73,7 +82,9 @@ const filterTodo =  (event) => {
         case "uncompleted":
         if(!todo.classList.contains('completed')){
             todo.style.display = 'flex';
-        
+           //hiding the form when choosing uncompleted
+            todoInput.style.display = 'none';
+            addButton.style.display = 'none';
         }else{
             todo.style.display = 'none';
         }

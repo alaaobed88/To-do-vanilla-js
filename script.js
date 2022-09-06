@@ -9,7 +9,7 @@ const filter = document.querySelector('.filter-to-do');
 const addTodo = (event) => {
     //prevent default behavior
     event.preventDefault();
-    if (todoInput.value.includes('   ') || todoInput.value =='  ' || todoInput.value ==' ' || todoInput.value =='') return
+    
     //created container for the to do list-item
     const todocontainer = document.createElement('div');
     todocontainer.classList.add('todo-items-container');
@@ -53,8 +53,31 @@ const completedTodo = (event) => {
     }
 }
 
-const filterTodo = (event) => {
-    
+const filterTodo =  (event) => {
+    const todos = todoList.childNodes;
+    todos.forEach(function(todo){
+    switch(event.target.value){
+        case "all":
+        todo.style.display = 'flex';  
+        break;
+        case "completed":
+        if(todo.classList.contains('completed'))  {  
+            todo.style.display = 'flex';
+        }else{
+                todo.style.display = 'none';
+            }
+            break;
+        case "uncompleted":
+        if(!todo.classList.contains('completed')){
+            todo.style.display = 'flex';
+        
+        }else{
+            todo.style.display = 'none';
+        }
+        break;
+        
+    }
+    });
 }
 
 

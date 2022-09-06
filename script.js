@@ -53,7 +53,9 @@ const completedTodo = (event) => {
     }
 }
 
-
+const filterTodo = (event) => {
+    
+}
 
 
 

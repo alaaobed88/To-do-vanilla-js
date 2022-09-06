@@ -9,7 +9,10 @@ const filter = document.querySelector('.filter-to-do');
 const addTodo = (event) => {
     //prevent default behavior
     event.preventDefault();
-    
+    if(todoInput.value.trim().length===0) {
+        alert('You cannot enter an empty task');
+        return
+    }
     //created container for the to do list-item
     const todocontainer = document.createElement('div');
     todocontainer.classList.add('todo-items-container');

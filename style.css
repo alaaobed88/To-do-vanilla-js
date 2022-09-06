@@ -40,7 +40,7 @@ form input{
     padding:1%;
     cursor:pointer;
     width:20rem;
-    height:5vh;
+    height:2.4rem;
 }
 
 form button{
@@ -50,6 +50,7 @@ form button{
     background-color: white;
     transition:0.3s ease-in-out;
     cursor:pointer;
+    height:2.4rem;
 }
 
 form button i{
@@ -159,19 +160,21 @@ select{
 color: rgb(130, 185, 204);
 width:10rem;
 cursor:pointer;
-height:2.8vh;
+height:2.4rem;
 }
 
 .select::after{
     content:"\25BC";
     background-color: white;
     position:absolute;
-    top:0.085rem;
+    top:0.1rem;
     right:0.1rem;
+    padding:0.2rem;
     font-size: 1rem;
     pointer-events: none;
     color:rgb(139, 188, 204);
     transition: all 0.5s ease-in-out;
+    height:1.8rem;
 }
 
 .select:hover::after{

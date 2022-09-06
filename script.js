@@ -2,7 +2,7 @@
 const addButton = document.querySelector('.to-do-button');
 const todoInput = document.querySelector('.to-do-input');
 const todoList  = document.querySelector('.to-do-list');
-
+const filter = document.querySelector('.filter-to-do');
 
 //functions
 
@@ -55,7 +55,10 @@ const completedTodo = (event) => {
 
 
 
+
+
 //event Listeners
 addButton.addEventListener('click', addTodo);
 todoList.addEventListener('click',deleteTodo);
 todoList.addEventListener('click',completedTodo);
+filter.addEventListener('click', filterTodo);

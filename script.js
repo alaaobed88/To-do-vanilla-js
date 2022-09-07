@@ -96,6 +96,7 @@ const filterTodo =  (event) => {
 
 
 
+
 //event Listeners
 addButton.addEventListener('click', addTodo);
 todoList.addEventListener('click',deleteTodo);
